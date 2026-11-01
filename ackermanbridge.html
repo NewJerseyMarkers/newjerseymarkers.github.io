@@ -104,20 +104,23 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="ackermanbridge" startnode="1" creator="Twine" creator-version="2.12.1" format="SugarCube" format-version="2.37.3" ifid="2D9B0977-F27E-4A16-B5BB-11C5C65C0C20" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Hide SugarCube's sidebar */
+	<tw-storydata name="ackermanbridge" startnode="1" creator="Twine" creator-version="2.12.1" format="SugarCube" format-version="2.37.3" ifid="2D9B0977-F27E-4A16-B5BB-11C5C65C0C20" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Hide SugarCube's sidebar and remove the space it reserves */
 #ui-bar {
   display: none;
 }
-#story {
-  margin-left: 0;
-  background-color: transparent; /* lets the camera show through */
-  background-size: cover;
+#story,
+#ui-bar ~ #story,
+#ui-bar.stowed ~ #story {
+  margin: 0 auto !important;
+  padding: 10px 12px !important;
+  max-width: 600px;
+  background-color: transparent;
 }
 
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* no sideways scrolling, but allows scrolling down */
+  overflow-x: hidden;
 }
 
 /* Camera feed fills the screen behind everything */
@@ -131,7 +134,7 @@ video {
   object-fit: cover;
 }
 
-/* Images: centered and sized to fit the phone */
+/* Images: centered, fit the width, and capped in height */
 img {
   display: block;
   margin: 0;
@@ -139,52 +142,55 @@ img {
 }
 .passage img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 6px auto;
   max-width: 100%;
+  max-height: 40vh;
+  width: auto;
   height: auto;
 }
 
-/* Back and next arrows side by side */
+/* Back and next arrows: side by side, small */
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 16px;
 }
 .image-row img {
-  max-width: 300px;
+  width: 110px;
+  max-width: 30vw;
   height: auto;
   cursor: pointer;
 }
 
-/* Centers the logo on the opening screen */
+/* Opening screen logo */
 .full-page-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 .full-page-center img {
-  max-width: 100%;
+  max-width: 90%;
+  max-height: 70vh;
   height: auto;
 }
 
-/* Small credits icon */
+/* Small sources icon */
 .small-img img {
   width: 50px;
   height: auto;
 }
 
-/* NEW: readable panel for captions and credits over the camera */
+/* Readable panel for captions and credits over the camera */
 .caption-panel {
   background: rgba(0, 0, 0, 0.65);
   color: #ffffff;
   padding: 12px 16px;
   margin: 10px auto;
-  max-width: 90%;
+  max-width: 100%;
   border-radius: 8px;
-  font-size: 1.05em;
+  font-size: 1em;
   line-height: 1.45;
 }
 .caption-panel a {
@@ -251,17 +257,17 @@ document.addEventListener('visibilitychange', function () {
       startCamera();
     }
   }
-});</script><tw-passagedata pid="1" name="welcomeGeneral" tags="" position="725,350" size="100,100">&lt;div class=&quot;full-page-center&quot;&gt;[img[https://newjerseymarkers.github.io/general/logo.png][welcomeAckermanBridge]]&lt;/div&gt;
+});</script><tw-passagedata pid="1" name="welcomeGeneral" tags="" position="550,350" size="100,100">&lt;div class=&quot;full-page-center&quot;&gt;[img[https://newjerseymarkers.github.io/general/logo.png][welcomeAckermanBridge]]&lt;/div&gt;
 
-&lt;&lt;cacheaudio &quot;welcomeMessage&quot; &quot;WELCOME-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge1&quot; &quot;STOP1-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge2&quot; &quot;STOP2-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge3&quot; &quot;STOP3-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge4&quot; &quot;STOP4-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge5&quot; &quot;STOP5-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge6&quot; &quot;STOP6-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge7&quot; &quot;STOP7-AUDIO-LINK-HERE&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;audioAckermanBridge8&quot; &quot;STOP8-AUDIO-LINK-HERE&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="welcomeAckermanBridge" tags="" position="700,550" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;cacheaudio &quot;welcomeMessage&quot; &quot;WELCOME-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge1&quot; &quot;STOP1-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge2&quot; &quot;STOP2-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge3&quot; &quot;STOP3-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge4&quot; &quot;STOP4-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge5&quot; &quot;STOP5-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge6&quot; &quot;STOP6-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge7&quot; &quot;STOP7-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;audioAckermanBridge8&quot; &quot;STOP8-AUDIO-LINK-HERE.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="welcomeAckermanBridge" tags="" position="550,475" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/tapPrompt.png]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/anchorAckermanBridge.png][ackermanBridge1]]
@@ -278,7 +284,7 @@ document.addEventListener('visibilitychange', function () {
 &lt;&lt;audio &quot;audioAckermanBridge5&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge6&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge7&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge8&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="ackermanBridge1" tags="" position="575,550" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge8&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="ackermanBridge1" tags="" position="375,600" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge1.png][ackermanBridge2]]
@@ -298,7 +304,7 @@ How does a protest over pay cuts end with police clubbing children?&lt;/div&gt;
 
 &lt;&lt;audio &quot;welcomeMessage&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge1&quot; play&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge2&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="ackermanBridge2" tags="" position="700,675" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge2&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="ackermanBridge2" tags="" position="500,600" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge2.png][ackermanBridge3]]
@@ -321,7 +327,7 @@ What they were fighting for, they held in their hands. At a rally in Wallington,
 
 &lt;&lt;audio &quot;audioAckermanBridge1&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge2&quot; play&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge3&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="ackermanBridge3" tags="" position="825,675" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge3&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="ackermanBridge3" tags="" position="625,600" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge3.png][ackermanBridge4]]
@@ -344,7 +350,7 @@ The strike grew to 15,000 workers.&lt;/div&gt;
 
 &lt;&lt;audio &quot;audioAckermanBridge2&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge3&quot; play&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge4&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="ackermanBridge4" tags="" position="775,850" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge4&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="ackermanBridge4" tags="" position="750,600" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge4.png][ackermanBridge5]]
@@ -367,7 +373,7 @@ Their diverse immigrant backgrounds mirrored the American experience.&lt;/div&gt
 
 &lt;&lt;audio &quot;audioAckermanBridge3&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge4&quot; play&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge5&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="ackermanBridge5" tags="" position="600,850" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge5&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="ackermanBridge5" tags="" position="375,725" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge5.png][ackermanBridge6]]
@@ -390,7 +396,7 @@ On the picket line, children stood with their parents. Which put them in harm&#3
 
 &lt;&lt;audio &quot;audioAckermanBridge4&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge5&quot; play&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge6&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="sourcesAckermanBridge" tags="" position="600,975" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge6&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="sourcesAckermanBridge" tags="" position="550,850" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 &lt;&lt;/nobr&gt;&gt;
@@ -432,7 +438,7 @@ NARRATOR NAME HERE&lt;/div&gt;
 &lt;&lt;audio &quot;audioAckermanBridge5&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge6&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge7&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge8&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="ackermanBridge6" tags="" position="750,1050" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge8&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="ackermanBridge6" tags="" position="500,725" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge6.png][ackermanBridge7]]
@@ -453,7 +459,7 @@ And it wasn&#39;t only here. According to the strikers&#39; own 1926 pamphlet, p
 
 &lt;&lt;audio &quot;audioAckermanBridge5&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge6&quot; play&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge7&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="ackermanBridge7" tags="" position="875,1050" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge7&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="ackermanBridge7" tags="" position="625,725" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge7.png][ackermanBridge8]]
@@ -476,7 +482,7 @@ The violence didn&#39;t end the strike. It went on for nearly a year.&lt;/div&gt
 
 &lt;&lt;audio &quot;audioAckermanBridge6&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge7&quot; play&gt;&gt;
-&lt;&lt;audio &quot;audioAckermanBridge8&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="ackermanBridge8" tags="" position="750,1175" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
+&lt;&lt;audio &quot;audioAckermanBridge8&quot; stop&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="ackermanBridge8" tags="" position="750,725" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge8.png]]
