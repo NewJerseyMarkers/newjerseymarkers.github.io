@@ -201,7 +201,21 @@ img {
 a {
   color: #612A60;
 }
-.passage img[src*="/image"] { max-height: 55vh; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Allow pinch-to-zoom on phones */
+.passage img[src*="/image"] { max-height: 55vh; }
+/* Tighter layout: back, sources, next in one row */
+.passage img[src*="/image"] { margin: 0 auto; }
+.image-row {
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  padding: 0 2%;
+  margin-top: -16px;
+}
+.image-row a { display: block; }
+.image-row img { margin: 0; }
+.image-row .small-img img { width: 50px; max-width: 15vw; }
+.arrow-spacer { display: block; width: 110px; max-width: 30vw; }
+.caption-panel { margin-top: 4px; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Allow pinch-to-zoom on phones */
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes');
 
 /* Keep the back camera running behind every passage */
@@ -280,14 +294,15 @@ document.addEventListener('visibilitychange', function () {
 [img[https://newjerseymarkers.github.io/general/returnToWelcome.png][welcomeAckermanBridge]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/imageAckermanBridge1.png][ackermanBridge2]]
 &lt;div class=&quot;image-row&quot;&gt;
+  &lt;span class=&quot;arrow-spacer&quot;&gt;&lt;/span&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
   &lt;a data-passage=&quot;ackermanBridge2&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/nextArrow.png&quot; alt=&quot;Next&quot;&gt;
   &lt;/a&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;February 9, 1926. Mill workers are marching down River Road toward this bridge. Their children are marching with them. It&#39;s a peaceful protest against pay cuts, headed across Ackerman Bridge into Clifton.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;February 9, 1926. Mill workers are marching down River Road toward this bridge. Their children are marching with them. It&#39;s a peaceful protest against pay cuts, headed across Ackerman Bridge into Clifton.
 
 Then local police intercept them. And start swinging clubs. At the workers. At their kids.
 
@@ -303,14 +318,14 @@ How does a protest over pay cuts end with police clubbing children?&lt;/div&gt;
   &lt;a data-passage=&quot;ackermanBridge1&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/backArrow.png&quot; alt=&quot;Back&quot;&gt;
   &lt;/a&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
   &lt;a data-passage=&quot;ackermanBridge3&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/nextArrow.png&quot; alt=&quot;Next&quot;&gt;
   &lt;/a&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;It started with a paycheck. At the Botany Worsted Mills in Passaic, the company cut wages by 10 percent. Wages that were already low.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;It started with a paycheck. At the Botany Worsted Mills in Passaic, the company cut wages by 10 percent. Wages that were already low.
 
 Workers asked the mill to end the cut, pay overtime, and stop discriminating against union members. The company fired 45 union members. Within an hour, 4,000 workers had formed a picket line.
 
@@ -326,14 +341,14 @@ What they were fighting for, they held in their hands. At a rally in Wallington,
   &lt;a data-passage=&quot;ackermanBridge2&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/backArrow.png&quot; alt=&quot;Back&quot;&gt;
   &lt;/a&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
   &lt;a data-passage=&quot;ackermanBridge4&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/nextArrow.png&quot; alt=&quot;Next&quot;&gt;
   &lt;/a&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;Then it spread. To Garfield. Clifton. Lodi. East Paterson.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;Then it spread. To Garfield. Clifton. Lodi. East Paterson.
 
 In East Paterson, strikers marched hand in hand, under guard. In the front row: Betty Marandi, Laura Douglass, and Emma Polcari. They led 3,000 strikers through the National Silk Dye Company grounds while armed deputies stood back.
 
@@ -349,14 +364,14 @@ The strike grew to 15,000 workers.&lt;/div&gt;
   &lt;a data-passage=&quot;ackermanBridge3&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/backArrow.png&quot; alt=&quot;Back&quot;&gt;
   &lt;/a&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
   &lt;a data-passage=&quot;ackermanBridge5&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/nextArrow.png&quot; alt=&quot;Next&quot;&gt;
   &lt;/a&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;Look closely at this photo. Two Black workers from the mills in Lodi, joining their white coworkers on strike. The strikers&#39; 1926 pamphlet called it a common fight for a living wage and the right to organize.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;Look closely at this photo. Two Black workers from the mills in Lodi, joining their white coworkers on strike. The strikers&#39; 1926 pamphlet called it a common fight for a living wage and the right to organize.
 
 Many strikers were Polish immigrants. But they came from many ethnicities, races, and religions. Women and men. Black and white.
 
@@ -372,14 +387,14 @@ Their diverse backgrounds mirrored the American experience.&lt;/div&gt;
   &lt;a data-passage=&quot;ackermanBridge4&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/backArrow.png&quot; alt=&quot;Back&quot;&gt;
   &lt;/a&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
   &lt;a data-passage=&quot;ackermanBridge6&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/nextArrow.png&quot; alt=&quot;Next&quot;&gt;
   &lt;/a&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;Whole families were in this fight. Including the kids.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;Whole families were in this fight. Including the kids.
 
 On March 8, 1926, children of Forstmann &amp; Huffman workers carried their own signs. One read, &quot;We want more food and more clothes.&quot; Another: &quot;We are strikers, we need more food.&quot;
 
@@ -431,14 +446,14 @@ All photographs 1926. American Labor Museum/Botto House National Landmark Collec
   &lt;a data-passage=&quot;ackermanBridge5&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/backArrow.png&quot; alt=&quot;Back&quot;&gt;
   &lt;/a&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
   &lt;a data-passage=&quot;ackermanBridge7&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/nextArrow.png&quot; alt=&quot;Next&quot;&gt;
   &lt;/a&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;The violence kept coming. In March, a strike bulletin reported that police had attacked strikers at Ackerman Bridge again.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;The violence kept coming. In March, a strike bulletin reported that police had attacked strikers at Ackerman Bridge again.
 
 And it wasn&#39;t only here. According to the strikers&#39; own 1926 pamphlet, police destroyed cameras and beat reporters. So photographers fled to nearby rooftops and kept shooting. That&#39;s where these pictures were taken.&lt;/div&gt;
 
@@ -452,14 +467,14 @@ And it wasn&#39;t only here. According to the strikers&#39; own 1926 pamphlet, p
   &lt;a data-passage=&quot;ackermanBridge6&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/backArrow.png&quot; alt=&quot;Back&quot;&gt;
   &lt;/a&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
   &lt;a data-passage=&quot;ackermanBridge8&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/nextArrow.png&quot; alt=&quot;Next&quot;&gt;
   &lt;/a&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;Police even broke up a parade of children.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;Police even broke up a parade of children.
 
 The next day, boys and girls gathered in Belmont Park in Garfield. Mrs. H. Zeitkowsky is speaking. The girl sitting near her is Miriam Silberfarb, a leader of the striker children.
 
@@ -475,11 +490,12 @@ The violence didn&#39;t end the strike. It went on for nearly a year.&lt;/div&gt
   &lt;a data-passage=&quot;ackermanBridge7&quot;&gt;
     &lt;img src=&quot;https://newjerseymarkers.github.io/general/backArrow.png&quot; alt=&quot;Back&quot;&gt;
   &lt;/a&gt;
+  &lt;a data-passage=&quot;sourcesAckermanBridge&quot; class=&quot;small-img&quot;&gt;
+    &lt;img src=&quot;https://newjerseymarkers.github.io/general/sourcesIcon.png&quot; alt=&quot;Sources&quot;&gt;
+  &lt;/a&gt;
+  &lt;span class=&quot;arrow-spacer&quot;&gt;&lt;/span&gt;
 &lt;/div&gt;
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;On November 12, 1926, workers and mill management reached their first agreement. The strike ended on March 1, 1927.
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;On November 12, 1926, workers and mill management reached their first agreement. The strike ended on March 1, 1927.
 
 It started with 45 people losing their jobs. It grew into 15,000 people who refused to back down. And they marched with a song on their lips, calling other textile workers to join them.
 
