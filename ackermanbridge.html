@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html data-init="no-js">
-<head><meta property="og:title" content="The Battle of Ackerman Bridge">
-<meta property="og:description" content="A Virtual Museum">
-<meta property="og:image" content="https://newjerseymarkers.github.io/general/shareImage.png">
-<meta property="og:url" content="https://newjerseymarkers.github.io/ackermanbridge.html">
-<meta property="og:type" content="website">
+<head>
 <meta charset="UTF-8" />
 <title>ackermanbridge</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -294,6 +290,21 @@ document.addEventListener('visibilitychange', function () {
       startCamera();
     }
   }
+});
+/* Preload every image used in the story */
+$(document).one(':storyready', function () {
+  var getPassages = Story.filter ? Story.filter.bind(Story) : Story.lookupWith.bind(Story);
+  var seen = {};
+  getPassages(function () { return true; }).forEach(function (passage) {
+    var urls = passage.text.match(/https:\/\/[^\s"'\]]+\.png/g) || [];
+    urls.forEach(function (url) {
+      if (!seen[url]) {
+        seen[url] = true;
+        var img = new Image();
+        img.src = url;
+      }
+    });
+  });
 });</script><tw-passagedata pid="1" name="welcomeGeneral" tags="" position="550,350" size="100,100">&lt;div class=&quot;full-page-center&quot;&gt;[img[https://newjerseymarkers.github.io/general/logo.png][welcomeAckermanBridge]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="welcomeAckermanBridge" tags="" position="550,475" size="100,100">&lt;video id=&quot;camera-feed&quot; autoplay playsinline style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/video&gt;
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/tapPrompt.png]]
