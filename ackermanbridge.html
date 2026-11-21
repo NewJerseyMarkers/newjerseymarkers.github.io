@@ -215,7 +215,21 @@ a {
 .image-row img { margin: 0; }
 .image-row .small-img img { width: 50px; max-width: 15vw; }
 .arrow-spacer { display: block; width: 110px; max-width: 30vw; }
-.caption-panel { margin-top: 4px; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Allow pinch-to-zoom on phones */
+.caption-panel { margin-top: 4px; }
+/* Tighter layout: back, sources, next in one row */
+.passage img[src*="/image"] { margin: 0 auto; }
+.image-row {
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  padding: 0 2%;
+  margin-top: -16px;
+}
+.image-row a { display: block; }
+.image-row img { margin: 0; }
+.image-row .small-img img { width: 42px; max-width: 12vw; }
+.arrow-spacer { display: block; width: 110px; max-width: 30vw; }
+.caption-panel { margin-top: 22px; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Allow pinch-to-zoom on phones */
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes');
 
 /* Keep the back camera running behind every passage */
