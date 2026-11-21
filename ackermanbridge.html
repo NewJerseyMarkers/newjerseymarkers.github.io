@@ -229,7 +229,9 @@ a {
 .image-row img { margin: 0; }
 .image-row .small-img img { width: 42px; max-width: 12vw; }
 .arrow-spacer { display: block; width: 110px; max-width: 30vw; }
-.caption-panel { margin-top: 22px; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Allow pinch-to-zoom on phones */
+.caption-panel { margin-top: 22px; }
+/* Welcome screen: sources icon evenly between the image and the caption */
+.welcome-icon img { margin: 16px auto 0; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* Allow pinch-to-zoom on phones */
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes');
 
 /* Keep the back camera running behind every passage */
@@ -290,10 +292,8 @@ document.addEventListener('visibilitychange', function () {
 &lt;&lt;nobr&gt;&gt;
 [img[https://newjerseymarkers.github.io/general/tapPrompt.png]]
 [img[https://newjerseymarkers.github.io/ackermanBridge/anchorAckermanBridge.png][ackermanBridge1]]
-&lt;span class=&quot;small-img&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;
-
-&lt;div class=&quot;caption-panel&quot;&gt;You&#39;re standing where New Jersey history happened. The words on this marker are only the beginning. Turn up your volume and tap the image to hear the rest.&lt;/div&gt;
+&lt;span class=&quot;small-img welcome-icon&quot;&gt;[img[https://newjerseymarkers.github.io/general/sourcesIcon.png][sourcesAckermanBridge]]&lt;/span&gt;
+&lt;&lt;/nobr&gt;&gt;&lt;div class=&quot;caption-panel&quot;&gt;You&#39;re standing where New Jersey history happened. The words on this marker are only the beginning. Turn up your volume and tap the image to hear the rest.&lt;/div&gt;
 
 &lt;&lt;audio &quot;welcomeMessage&quot; play&gt;&gt;
 &lt;&lt;audio &quot;audioAckermanBridge1&quot; stop&gt;&gt;
